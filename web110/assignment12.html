@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +8,60 @@
     <title style="font-family: 'Courier New', Courier, monospace;">Assignment 12</title>
     <link rel="stylesheet" href="web110/style.css">
 </head>
-<body>
-    <h1 id="name"></h1>
-    <script>
-    document.getElementById("name").innerHTML = "Ana Escobedo";
-    </script>
 
-    <section>
-        <p class="cube" id="time"></p>
+<body>
+    <h1 id="text"></h1>
+    <section class="cube">
+        <p id="time"></p>
+
+        <p>
+            Assignment 12 taught me about basic Javascript within HTML. Javascript should typically
+            be at the end of the document. Additioanlly, Javascript can help animate websites and create depth and
+            movement. This knowledge will be extremely useful if I become a web developer because Javascript creates a
+            more visually beautiful website and it is a common language used in the coding world.
+
+            <canvas id="example" width="360" height="240"></canvas>
+        </p>
+
+        <canvas id="Canvas" width="400" height="400" style="border:2px solid green"></canvas>
         <script>
-            document.getElementById("time").innerHTML = Date();
+            const canvas = document.getElementById("Canvas");
+            const ctx = canvas.getContext("2d");
+            ctx.fillStyle = "#fff";
+            canvas.height = canvas.width;
+            ctx.transform(6, 9, 0, -3, 0, canvas.height)
+
+            let xMax = canvas.height;
+            let slope = 1.2;
+            let intercept = 70;
+
+            ctx.moveTo(0, intercept);
+            ctx.lineTo(xMax, f(xMax));
+            ctx.strokeStyle = "black";
+            ctx.stroke();
+
+            function f(x) {
+                return x * slope + intercept;
+            }
         </script>
+
     </section>
+
 </body>
+
+<script>
+    document.getElementById("text").innerHTML = "Ana Escobedo";
+    document.getElementById("time").innerHTML = Date();
+    var example = document.getElementById("example");
+    var context = example.getContext("2d");
+
+    context.strokeStyle = "green";
+    context.fillStyle = "green";
+
+    context.font = "30px helvetica";
+    context.textAlign = "center";
+    context.strokeText("HTML5 Canvas", 160, 50);
+    context.fillText("HTML5 Canvas", 160, 50);
+</script>
+
 </html>

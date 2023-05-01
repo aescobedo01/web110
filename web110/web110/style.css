@@ -25,12 +25,7 @@ margin: 10px;
 color: blueviolet;
 }
 
-p {
-    border-color: aquamarine;
-    font-weight: bold;
-}
-
-section .cube {
+section.cube {
     margin: 10px;
     border: auto;
     border-style: solid;
@@ -39,6 +34,8 @@ section .cube {
     color: #d74291;
     flex-wrap: wrap;
     display: flex;
+    border-color: aquamarine;
+    font-weight: bold;
 }
 
 img {
